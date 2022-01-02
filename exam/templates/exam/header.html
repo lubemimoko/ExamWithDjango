@@ -1,0 +1,18 @@
+
+  {% comment %} <nav class="navtitle"> {% endcomment %}
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'history' %}">History</a></li>
+      <li class="dropdown2">
+        <a class="dropbtn">Take Exams</a>
+        <div class="dropdown2-content">
+          {% for course in courses %} 
+            <a href="{% url 'topic' id=course.id %}">{{course.course}}</a> 
+          {% endfor %}
+          
+        </div>
+      </li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+    
+  {% comment %} </nav> {% endcomment %}
